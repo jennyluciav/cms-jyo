@@ -65,5 +65,16 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\nset up your mailgun integration');
 }
 
+// or
+keystone.set('cloudinary config', 'cloudinary://784445158477956:jwnzsKBdA7Juwi-KHsVbPvxNmjE@dap1hirny' );
+ 
+// optional, will prefix all built-in tags with 'keystone_'
+keystone.set('cloudinary prefix', 'keystone');
+ 
+// optional, will prefix each image public_id with [{prefix}]/{list.path}/{field.path}/
+keystone.set('cloudinary folders', true);
+ 
+// optional, will force cloudinary to serve images over https
+keystone.set('cloudinary secure', true);
 
 keystone.start();
